@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputHorizontal != 0){
             rb.velocity = new Vector2(inputHorizontal * runSpeed, rb.velocity.y);
+        } else if (groundCheck.isGrounded){
+            rb.velocity = new Vector2(0f, rb.velocity.y);
         }
 
         // Jumping
