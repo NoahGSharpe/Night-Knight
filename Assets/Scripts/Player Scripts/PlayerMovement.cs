@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     // Horizontal movement
     public float runSpeed;
     private float inputHorizontal;
-    private bool facingRight = true;
 
     // Jumping
     public float jumpingPower;
@@ -15,13 +14,15 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimeCounter;
     private float jumpBufferTime = 0.1f;
     private float jumpBufferCounter;
+    private GroundCheck groundCheck;
 
     private Rigidbody2D rb;
-    private GroundCheck groundCheck;
+    private Animator animator;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         groundCheck = transform.Find("GroundCheckCollider").GetComponent<GroundCheck>();
+        animator  = GetComponent<Animator>();
     }
 
     private void Update(){
@@ -30,12 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputHorizontal != 0){
             rb.velocity = new Vector2(inputHorizontal * runSpeed, rb.velocity.y);
-        }
-
-        if (inputHorizontal > 0 && !facingRight){
-            Flip();
-        } else if (inputHorizontal < 0 && facingRight){
-            Flip();
         }
 
         // Jumping
@@ -54,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f){
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpBufferCounter = 0f;
+            animator.SetTrigger("Jump");
         }
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
@@ -62,11 +58,4 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    void Flip(){
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
-
-        facingRight = !facingRight;
-    }
 }
