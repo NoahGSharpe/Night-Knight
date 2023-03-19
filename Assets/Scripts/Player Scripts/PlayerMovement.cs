@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private float jumpBufferTime = 0.1f;
     private float jumpBufferCounter;
     private GroundCheck groundCheck;
+    private float gravity;
+    [SerializeField]
+    private float fastFallGravityMultiplier;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -23,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         groundCheck = transform.Find("GroundCheckCollider").GetComponent<GroundCheck>();
         animator  = GetComponent<Animator>();
+        gravity = rb.gravityScale;
     }
 
     private void Update(){
@@ -51,6 +55,13 @@ public class PlayerMovement : MonoBehaviour
             jumpBufferCounter = 0f;
             coyoteTimeCounter = 0f;
             animator.SetTrigger("Jump");
+        }
+
+        // Increase gravity when falling
+        if (!groundCheck.isGrounded && rb.velocity.y < -0.1){
+            rb.gravityScale = gravity * fastFallGravityMultiplier;
+        } else {
+            rb.gravityScale = gravity;
         }
         
     }
