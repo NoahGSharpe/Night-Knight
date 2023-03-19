@@ -49,11 +49,8 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f){
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpBufferCounter = 0f;
-            animator.SetTrigger("Jump");
-        }
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             coyoteTimeCounter = 0f;
+            animator.SetTrigger("Jump");
         }
         
     }
