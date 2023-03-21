@@ -8,14 +8,14 @@ public class PlayerAnimations : MonoBehaviour
     private float inputHorizontal;
     private bool facingRight = true;
 
-    private Animator animator;
+    private Animator anim;
     private Rigidbody2D rb;
     private GroundCheck groundCheck;
 
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         groundCheck = transform.Find("GroundCheckCollider").GetComponent<GroundCheck>();
     }
@@ -24,14 +24,16 @@ public class PlayerAnimations : MonoBehaviour
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
-        animator.SetFloat("SpeedX", Mathf.Abs(inputHorizontal));
-        animator.SetFloat("SpeedY", rb.velocity.y);
-        animator.SetBool("isGrounded", groundCheck.isGrounded);
+        anim.SetFloat("SpeedX", Mathf.Abs(inputHorizontal));
+        anim.SetFloat("SpeedY", rb.velocity.y);
+        anim.SetBool("isGrounded", groundCheck.isGrounded);
 
-        if (inputHorizontal > 0 && !facingRight){
-            Flip();
-        } else if (inputHorizontal < 0 && facingRight){
-            Flip();
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttack1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttack2")){
+            if (inputHorizontal > 0 && !facingRight){
+                Flip();
+            } else if (inputHorizontal < 0 && facingRight){
+                Flip();
+            }
         }
     }
 

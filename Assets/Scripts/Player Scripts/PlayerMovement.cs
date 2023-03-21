@@ -20,12 +20,12 @@ public class PlayerMovement : MonoBehaviour
     private float fastFallGravityMultiplier;
 
     private Rigidbody2D rb;
-    private Animator animator;
+    private Animator anim;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         groundCheck = transform.Find("GroundCheckCollider").GetComponent<GroundCheck>();
-        animator  = GetComponent<Animator>();
+        anim  = GetComponent<Animator>();
         gravity = rb.gravityScale;
     }
 
@@ -33,11 +33,14 @@ public class PlayerMovement : MonoBehaviour
         
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
-        if (inputHorizontal != 0){
-            rb.velocity = new Vector2(inputHorizontal * runSpeed, rb.velocity.y);
-        } else if (groundCheck.isGrounded){
-            rb.velocity = new Vector2(0f, rb.velocity.y);
+        if (!isAttacking()){
+            if (inputHorizontal != 0){
+                rb.velocity = new Vector2(inputHorizontal * runSpeed, rb.velocity.y);
+            } else if (groundCheck.isGrounded){
+                rb.velocity = new Vector2(0f, rb.velocity.y);
+            }
         }
+        
 
         // Jumping
         if (groundCheck.isGrounded){
@@ -52,11 +55,11 @@ public class PlayerMovement : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
         }
 
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f){
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isAttacking()){
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpBufferCounter = 0f;
             coyoteTimeCounter = 0f;
-            animator.SetTrigger("Jump");
+            anim.SetTrigger("Jump");
         }
 
         // Increase gravity when falling
@@ -66,6 +69,11 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = gravity;
         }
         
+    }
+
+
+    bool isAttacking(){
+        return anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttack1") || anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttack2");
     }
 
 }
