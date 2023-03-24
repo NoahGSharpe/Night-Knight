@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance;
     // Horizontal movement
     public float runSpeed;
     private float inputHorizontal;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -71,6 +73,10 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    public float GetMovementSpeed()
+    {
+        return runSpeed;
+    }
 
     bool isAttacking(){
         return anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttack1") || anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttack2");
