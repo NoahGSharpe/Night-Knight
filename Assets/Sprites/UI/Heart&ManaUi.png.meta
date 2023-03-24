@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a5909fad2e8a25409b208acf0541043
+guid: 16befb180caa1f74fbb3d6f8d2299e62
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,85 +105,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _AttackNoMovement_0
+      name: Heart&ManaUi_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 0
-        width: 39
-        height: 37
-      alignment: 9
-      pivot: {x: 0.6470714, y: 0.5472654}
+        x: 2
+        y: 38
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3422b07a0fdf03b41ad33c3d673247f3
-      internalID: 337050356
+      spriteID: 1b1d9ea30046d8347aff0a00964179d9
+      internalID: -1889242609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _AttackNoMovement_1
+      name: Heart&ManaUi_3
       rect:
         serializedVersion: 2
-        x: 159
-        y: 0
-        width: 66
-        height: 43
-      alignment: 9
-      pivot: {x: 0.26119047, y: 0.43875867}
+        x: 21
+        y: 28
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8d0fb9589fc6204289304416d03647a
-      internalID: -1592041624
+      spriteID: eabbf5284efcb74488c61680a06c410b
+      internalID: -132629232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: _AttackNoMovement_2
+      name: Heart&ManaUi_4
       rect:
         serializedVersion: 2
-        x: 281
-        y: 0
-        width: 65
-        height: 36
-      alignment: 9
-      pivot: {x: 0.24515945, y: 0.5211855}
+        x: 33
+        y: 28
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 914880729ef813b479f3ccd34de1c2f1
-      internalID: -509921797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _AttackNoMovement_3
-      rect:
-        serializedVersion: 2
-        x: 401
-        y: 0
-        width: 59
-        height: 35
-      alignment: 9
-      pivot: {x: 0.2714047, y: 0.54184514}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a250637e632453440a65bd4cba37ed27
-      internalID: 1025868031
+      spriteID: e81656f1392b7044e998dc42518c3a6a
+      internalID: 606291942
       vertices: []
       indices: 
       edges: []
@@ -199,10 +178,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      _AttackNoMovement_2: -509921797
-      _AttackNoMovement_1: -1592041624
-      _AttackNoMovement_0: 337050356
-      _AttackNoMovement_3: 1025868031
+      Heart&ManaUi_5: 856613518
+      Heart&ManaUi_0: -1889242609
+      Heart&ManaUi_6: -819194638
+      Heart&ManaUi_9: -2047676638
+      Heart&ManaUi_1: -1200135528
+      Heart&ManaUi_7: 1562613459
+      Heart&ManaUi_2: -1208464408
+      Heart&ManaUi_4: 606291942
+      Heart&ManaUi_3: -132629232
+      Heart&ManaUi_8: 1454813644
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
