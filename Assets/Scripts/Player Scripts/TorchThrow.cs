@@ -19,12 +19,12 @@ public class TorchThrow : MonoBehaviour
         Vector3 direction = (Vector3)(Input.mousePosition - screenPoint);
         direction.Normalize();
 
-        if (Input.GetMouseButton(0) && torchnum > 0)
+        if (Input.GetMouseButton(1) && torchnum > 0)
         {
             throwforce += 50*Time.deltaTime;
             throwforce = Mathf.Clamp(throwforce, 20, 50);
         }
-        if (Input.GetMouseButtonUp(0) && torchnum > 0)
+        if (Input.GetMouseButtonUp(1) && torchnum > 0)
         {
             Vector3 spawnpoint = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             GameObject projectile = Instantiate(torch, spawnpoint, Quaternion.identity);
