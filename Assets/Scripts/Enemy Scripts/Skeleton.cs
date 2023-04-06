@@ -5,7 +5,7 @@ using UnityEngine;
 public class Skeleton : MonoBehaviour, IDamageable
 {
     [SerializeField] private int health;
-    [SerializeField] private GameObject attackTarget;
+    private GameObject attackTarget;
     [SerializeField] private float attackRange;
     [SerializeField] private float attackCooldown;
     private float attackCooldownTimer;
@@ -25,6 +25,7 @@ public class Skeleton : MonoBehaviour, IDamageable
     private void Start(){
         anim = GetComponent<Animator>();
         attackCooldownTimer = attackCooldown;
+        attackTarget = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update(){
