@@ -82,7 +82,7 @@ public class TorchCodePuzzle : MonoBehaviour
                 }
             }
             //Set whatever happens when the puzzle is solved here.
-            gameObject.SetActive(false);
+            gameObject.GetComponent<Animator>().SetBool("Open", true);
         }
     }
     void CodeGen()
