@@ -7,7 +7,6 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     private GroundCheck groundCheck;
     private PlayerMovement playerMovement;
-    private bool canCombo = false;
     private bool comboWindowActive = false;
 
 
@@ -31,16 +30,10 @@ public class PlayerAttack : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && groundCheck.isGrounded && attackCooldownTimer <= 0){
 
-            if (canCombo && anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerAttack1")){
-                anim.SetBool("Combo", true);
-                canCombo = false;
-
-                Invoke("DisableCombo", 0.5f);
-            } else if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle") || anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerRun")){
-                
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle") || anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerRun")){
                 anim.SetTrigger("Attack");
-
-                Invoke("EnableCombo", 0.3f);
+            } else if (comboWindowActive){
+                anim.SetTrigger("Attack2");
             }
         }
     }
@@ -61,19 +54,16 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
     }
 
-    void EnableCombo(){
-        canCombo = true;
-    }
-
-    void DisableCombo(){
-        anim.SetBool("Combo", false);
-    }
-
     public void EnableComboWindow(){
         comboWindowActive = true;
     }
 
     public void DisableComboWindow(){
         comboWindowActive = false;
+        ResetAttackCooldown();
+    }
+
+    public void ResetAttackCooldown(){
+        attackCooldownTimer = attackCooldown;
     }
 }
