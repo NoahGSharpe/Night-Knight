@@ -383,7 +383,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torch: {fileID: 636113413073815269, guid: 552a34d9ca3800c4fb6b3e250c9e47ac, type: 3}
   throwforce: 5
-  torchnum: 500
+  minforce: 5
+  maxforce: 20
+  forcerate: 20
+  currenttorch: {fileID: 0}
+  cooldown: 3
+  lifespan: 10
 --- !u!70 &9203516539531569572
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

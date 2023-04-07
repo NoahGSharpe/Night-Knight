@@ -29,7 +29,7 @@ public class Chandelier : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "EditorOnly")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Torch"))
         {
             ropeanim.enabled = true;
             Destroy(other.gameObject);
@@ -37,7 +37,7 @@ public class Chandelier : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             rb.isKinematic = true;
             rb.velocity = new Vector2(0,0);
