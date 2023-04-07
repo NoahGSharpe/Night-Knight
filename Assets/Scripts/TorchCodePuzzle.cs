@@ -26,6 +26,13 @@ public class TorchCodePuzzle : MonoBehaviour
     }
     void Update()
     {
+        foreach (LightableObj example in examples)
+        {
+            if (code.Contains(examples.IndexOf(example)) && example.lit == false)
+            {
+                example.Light();
+            }
+        }
         if (wrong == false && right == false)
         {
             /*foreach (LightableObj light in wronglights)

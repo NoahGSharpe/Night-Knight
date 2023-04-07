@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 9203516539128101191}
   - component: {fileID: 9203516539128101189}
   - component: {fileID: 9203516539128101190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 9203516539531569571}
   - component: {fileID: 9203516539531569570}
   - component: {fileID: 700094665359635210}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
