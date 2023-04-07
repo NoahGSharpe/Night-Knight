@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightableObj : MonoBehaviour
 {
-    private Light light;
+    private GameObject light;
     private SpriteRenderer spriterend;
     private Animator animator;
     public bool lit;
@@ -13,11 +13,12 @@ public class LightableObj : MonoBehaviour
 
     void Start()
     {
+
         trigger = GetComponent<Collider2D>();
         spriterend = GetComponent<SpriteRenderer>();
         normalsprite = spriterend.sprite;
-        light = GetComponent<Light>();
-        light.enabled = false;
+        light = gameObject.transform.GetChild(0).gameObject;
+        light.SetActive(false);
         animator = GetComponent<Animator>();
         animator.enabled = false;
         lit = false;
@@ -25,7 +26,7 @@ public class LightableObj : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "EditorOnly")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Torch"))
         {
             Light();
             Destroy(other.gameObject);
@@ -33,7 +34,7 @@ public class LightableObj : MonoBehaviour
     }
     public void Light()
     {
-        light.enabled = true;
+        light.SetActive(true);
         animator.enabled = true;
         lit = true;
         trigger.enabled = false;
@@ -41,7 +42,7 @@ public class LightableObj : MonoBehaviour
     public void Unlight()
     {
         lit = false;
-        light.enabled = false;
+        light.SetActive(false);
         animator.enabled = false;
         spriterend.sprite = normalsprite;
         trigger.enabled = true;

@@ -7,14 +7,14 @@ public class Chandelier : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject rope;
     private Animator ropeanim;
-    private Collider2D ropetrigger;
+    //private Collider2D ropetrigger;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rope = gameObject.transform.GetChild(0).gameObject;
         ropeanim = rope.GetComponent<Animator>();
-        ropetrigger = rope.GetComponent<Collider2D>();
+        //ropetrigger = rope.GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -27,17 +27,17 @@ public class Chandelier : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "EditorOnly")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Torch"))
         {
             ropeanim.enabled = true;
             Destroy(other.gameObject);
         }
-    }
+    }*/
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             rb.isKinematic = true;
             rb.velocity = new Vector2(0,0);

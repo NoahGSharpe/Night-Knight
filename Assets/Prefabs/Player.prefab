@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 9203516539128101191}
   - component: {fileID: 9203516539128101189}
   - component: {fileID: 9203516539128101190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheckCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 9203516539531569571}
   - component: {fileID: 9203516539531569570}
   - component: {fileID: 700094665359635210}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -383,7 +383,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torch: {fileID: 636113413073815269, guid: 552a34d9ca3800c4fb6b3e250c9e47ac, type: 3}
   throwforce: 5
-  torchnum: 500
+  minforce: 5
+  maxforce: 20
+  forcerate: 20
+  currenttorch: {fileID: 0}
+  cooldown: 3
+  lifespan: 10
 --- !u!70 &9203516539531569572
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
