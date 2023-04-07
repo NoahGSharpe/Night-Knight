@@ -10,10 +10,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Torch
   - Water
   - UI
-  - 
+  - GroundCheck
   - 
   - Ground
   - 

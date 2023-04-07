@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1832150534182926047}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Teleport_Target
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1832150535350010554}
   - component: {fileID: 1832150535350010555}
   - component: {fileID: 1832150535350010552}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}

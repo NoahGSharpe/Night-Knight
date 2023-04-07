@@ -6,7 +6,7 @@ public class TorchThrow : MonoBehaviour
 {
     private Camera cam;
     public GameObject torch;
-    public float throwforce = 20f;
+    public float throwforce = 5f;
     public int torchnum;
 
     void Start()
@@ -21,8 +21,8 @@ public class TorchThrow : MonoBehaviour
 
         if (Input.GetMouseButton(1) && torchnum > 0)
         {
-            throwforce += 50*Time.deltaTime;
-            throwforce = Mathf.Clamp(throwforce, 20, 50);
+            throwforce += 20*Time.deltaTime;
+            throwforce = Mathf.Clamp(throwforce, 5, 20);
         }
         if (Input.GetMouseButtonUp(1) && torchnum > 0)
         {
@@ -31,7 +31,7 @@ public class TorchThrow : MonoBehaviour
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             rb.AddForce(direction * throwforce);
             torchnum--;
-            throwforce = 20;
+            throwforce = 5;
         }
 
     }
