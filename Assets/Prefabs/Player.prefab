@@ -296,7 +296,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 05041147ed6588a458fd11a6bbca19e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -314,9 +314,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 894269947
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: -1014191305
+  m_SortingLayer: 2
+  m_SortingOrder: 7
   m_Sprite: {fileID: 471246167, guid: e7a872ceb404eec4fa34b94b4cfbc891, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -383,11 +383,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torch: {fileID: 636113413073815269, guid: 552a34d9ca3800c4fb6b3e250c9e47ac, type: 3}
   throwforce: 5
-  minforce: 5
-  maxforce: 20
+  minforce: 10
+  maxforce: 23
   forcerate: 20
   currenttorch: {fileID: 0}
-  cooldown: 3
+  cooldown: 1
   lifespan: 10
 --- !u!70 &9203516539531569572
 CapsuleCollider2D:

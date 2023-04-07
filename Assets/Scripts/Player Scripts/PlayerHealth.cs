@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
@@ -44,6 +45,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         GetComponent<PlayerAnimations>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
+
+        Invoke("RestartScene", 3.0f);
     }
 
     private void UpdateHeartsUI()
@@ -61,5 +64,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
                 hearts[i].GetComponent<Image>().enabled = false;
             }
         }
+    }
+
+
+    private void RestartScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
