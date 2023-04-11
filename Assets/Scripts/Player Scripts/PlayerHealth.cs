@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private CinemachineImpulseSource camImpulseSource;
     private Animator anim;
+    [SerializeField] private DeathText deathText;
 
     void Start()
     {
@@ -29,6 +30,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerDeath"))
+            return;
+
         currentHearts -= damage;
 
         if (currentHearts >= 0)
@@ -51,6 +55,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         GetComponent<PlayerAnimations>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
+
+        deathText.StartGrowingText();
 
         Invoke("RestartScene", 3.0f);
     }
