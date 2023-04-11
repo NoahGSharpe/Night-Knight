@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightableObj : MonoBehaviour
 {
-    private GameObject light;
+    private GameObject _light;
     private SpriteRenderer spriterend;
     private Animator animator;
     public bool lit;
@@ -17,8 +17,8 @@ public class LightableObj : MonoBehaviour
         trigger = GetComponent<Collider2D>();
         spriterend = GetComponent<SpriteRenderer>();
         normalsprite = spriterend.sprite;
-        light = gameObject.transform.GetChild(0).gameObject;
-        light.SetActive(false);
+        _light = gameObject.transform.GetChild(0).gameObject;
+        _light.SetActive(false);
         animator = GetComponent<Animator>();
         animator.enabled = false;
         lit = false;
@@ -34,7 +34,7 @@ public class LightableObj : MonoBehaviour
     }
     public void Light()
     {
-        light.SetActive(true);
+        _light.SetActive(true);
         animator.enabled = true;
         lit = true;
         trigger.enabled = false;
@@ -42,7 +42,7 @@ public class LightableObj : MonoBehaviour
     public void Unlight()
     {
         lit = false;
-        light.SetActive(false);
+        _light.SetActive(false);
         animator.enabled = false;
         spriterend.sprite = normalsprite;
         trigger.enabled = true;
