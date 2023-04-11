@@ -17,6 +17,8 @@ public class DeathText : MonoBehaviour
         // Get a reference to the TextMeshProUGUI component
         deathText = GetComponent<TextMeshProUGUI>();
 
+        deathText.enabled = true;
+
         // Set the initial scale and color of the text
         deathText.transform.localScale = new Vector3(startScale, startScale, startScale);
         startColor = deathText.color;
