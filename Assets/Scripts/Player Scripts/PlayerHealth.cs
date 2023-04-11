@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using Cinemachine;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
@@ -13,11 +13,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private Sprite fullHeart; // Sprite for a full heart
     [SerializeField] private Sprite emptyHeart; // Sprite for an empty heart
 
+
+    [SerializeField] private float shakeForce;
+
+    private CinemachineImpulseSource camImpulseSource;
     private Animator anim;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        camImpulseSource = GetComponent<CinemachineImpulseSource>();
         currentHearts = maxHearts;
         UpdateHeartsUI();
     }
@@ -30,6 +35,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         {
             hearts[currentHearts].sprite = emptyHeart;
             anim.SetTrigger("Hurt");
+            camImpulseSource.GenerateImpulseWithForce(shakeForce);
         }
 
         if (currentHearts <= 0)
