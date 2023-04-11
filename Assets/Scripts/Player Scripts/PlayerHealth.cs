@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private Animator anim;
     [SerializeField] private DeathText deathText;
 
-    void Start()
+    private void Start()
     {
         anim = GetComponent<Animator>();
         camImpulseSource = GetComponent<CinemachineImpulseSource>();
@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             hearts[currentHearts].sprite = emptyHeart;
             anim.SetTrigger("Hurt");
             camImpulseSource.GenerateImpulseWithForce(shakeForce);
+            hearts[currentHearts].GetComponent<HeartShake>().Shake();
         }
 
         if (currentHearts <= 0)
@@ -77,7 +78,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             }
         }
     }
-
 
     private void RestartScene(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
