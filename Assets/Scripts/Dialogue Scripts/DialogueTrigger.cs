@@ -9,7 +9,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     //Attach this script to an empty gameobject with a 2D collider set to trigger
-    DialogueManager manager;
+    [SerializeField] private DialogueManager manager;
     TimelineController timelineController;
     public TextAsset TextFileAsset; // your imported text file for your NPC
     private Queue<string> dialogue = new Queue<string>(); // stores the dialogue (Great Performance!)
@@ -25,7 +25,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        manager = FindObjectOfType<DialogueManager>();
+        //manager = FindObjectOfType<DialogueManager>();
         timelineController = FindObjectOfType<TimelineController>();
     }
 
@@ -88,7 +88,7 @@ public class DialogueTrigger : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player" && !hasBeenUsed)
         {
@@ -97,14 +97,14 @@ public class DialogueTrigger : MonoBehaviour
             //Debug.Log("Collision");
         }
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
             inArea = true;
         }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {

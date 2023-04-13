@@ -1,0 +1,2 @@
+[NAME=PlayerKnight][SPEAKERSPRITE=] This can't be how it ends.
+The Solstice Vanguard, our country's greatest protectors, captured by the enemy.
