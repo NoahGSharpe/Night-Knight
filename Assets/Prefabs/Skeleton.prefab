@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6792339969420920881}
   - component: {fileID: 6792339969420920886}
   - component: {fileID: -5395033911539856404}
+  - component: {fileID: 5478183238974444032}
   m_Layer: 10
   m_Name: Skeleton
   m_TagString: Untagged
@@ -306,3 +307,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5478183238974444032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6792339969420920895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66bb9a0ad8f78b46949df0d0be18712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  step: {fileID: 8300000, guid: 7e24548c0a518f04f8d18f930f613545, type: 3}
+  attack: {fileID: 8300000, guid: 6dae75026d65cae43beb223eede568c4, type: 3}
+  hiss: {fileID: 0}

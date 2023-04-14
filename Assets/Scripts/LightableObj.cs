@@ -10,6 +10,7 @@ public class LightableObj : MonoBehaviour
     public bool lit;
     private Collider2D trigger;
     private Sprite normalsprite;
+    private AudioSource audio;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class LightableObj : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.enabled = false;
         lit = false;
+        audio = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -36,6 +38,7 @@ public class LightableObj : MonoBehaviour
     {
         light.SetActive(true);
         animator.enabled = true;
+        audio.Play();
         lit = true;
         trigger.enabled = false;
     }
@@ -44,6 +47,7 @@ public class LightableObj : MonoBehaviour
         lit = false;
         light.SetActive(false);
         animator.enabled = false;
+        audio.Stop();
         spriterend.sprite = normalsprite;
         trigger.enabled = true;
     }

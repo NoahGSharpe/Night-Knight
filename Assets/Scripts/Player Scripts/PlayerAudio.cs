@@ -31,9 +31,9 @@ public class PlayerAudio : MonoBehaviour
         }
         else
         {
-            if (isPlaying == true)
+            audio.loop = false;
+            if (isPlaying == true && anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle"))
             {
-                audio.loop = false;
                 audio.Stop();
                 isPlaying = false;
             }
@@ -43,9 +43,10 @@ public class PlayerAudio : MonoBehaviour
 
     public void RunAud()
     {
-        audio.Stop();
+        
         if (isPlaying == false)
         {
+            audio.Stop();
             audio.clip = run;
             audio.loop = true;
             audio.Play();
@@ -79,7 +80,6 @@ public class PlayerAudio : MonoBehaviour
     }
     public void TossAud()
     {
-        audio.Stop();
         audio.clip = toss;
         audio.Play();
     }
