@@ -9,6 +9,5 @@ public class DialogueAutoAdvance : MonoBehaviour
     void OnEnable()
     {
         manager.AdvanceDialogue();
-        gameObject.SetActive(false);
     }
 }
