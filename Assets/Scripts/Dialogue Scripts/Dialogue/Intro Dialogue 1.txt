@@ -1,2 +1,4 @@
 [NAME=PlayerKnight][SPEAKERSPRITE=] This can't be how it ends.
 The Solstice Vanguard, our country's greatest protectors, captured by the enemy.
+[NAME=OtherKnight][SPEAKERSPRITE=] Fear not PlayerKnight, we will yet emerge victorious!
+No army of the undead can hope to contain the Solstice Vanguard!

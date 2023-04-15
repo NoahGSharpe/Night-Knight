@@ -1,0 +1,2 @@
+[NAME=PlayerKnight][SPEAKERSPRITE=]I won't let you take another life!
+[NAME=Boss][SPEAKERSPRITE=]You've seen your friend's fate, and yet you challenge me?

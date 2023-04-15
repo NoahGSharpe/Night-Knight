@@ -2674,8 +2674,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   run: {fileID: 8300000, guid: eec469c39d067c641a11610b30e3557c, type: 3}
-  jump: {fileID: 8300000, guid: acf7473dee6fdbe47b1fb6e713b5fdb8, type: 3}
-  land: {fileID: 8300000, guid: 21d62d64ef3f3c1488ccc40b7468f782, type: 3}
+  jump: {fileID: 8300000, guid: 21d62d64ef3f3c1488ccc40b7468f782, type: 3}
+  land: {fileID: 8300000, guid: acf7473dee6fdbe47b1fb6e713b5fdb8, type: 3}
   attack1: {fileID: 8300000, guid: 95c0594fac3e08f47860243f8b58bd74, type: 3}
   attack2: {fileID: 8300000, guid: 6dae75026d65cae43beb223eede568c4, type: 3}
   toss: {fileID: 8300000, guid: 7c6b167bf6577a849ad291b5039e17eb, type: 3}

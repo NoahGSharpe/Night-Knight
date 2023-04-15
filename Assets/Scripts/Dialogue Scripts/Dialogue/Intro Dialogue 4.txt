@@ -1,0 +1,4 @@
+[NAME=PlayerKnight][SPEAKERSPRITE=]OtherKnight!!
+[NAME=Boss][SPEAKERSPRITE=]Death comes for all eventually.
+Take the prisoners to the Ritual Chamber to be sacrificed.
+[NAME=PlayerKnight][SPEAKERSPRITE=]No!
