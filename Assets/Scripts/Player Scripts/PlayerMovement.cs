@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement instance;
     // Horizontal movement
     public float runSpeed;
+    private float parentSpeed = 0f;
+    [HideInInspector] public MovingPlatform platform;
     private float inputHorizontal;
 
     // Jumping
@@ -35,11 +37,25 @@ public class PlayerMovement : MonoBehaviour
         
         inputHorizontal = Input.GetAxisRaw("Horizontal");
 
+        /*
+        if (isOnPlatform){
+            parentSpeed = transform.parent.GetComponent<MovingPlatform>().xVelocity;
+            //parentSpeed = 0.5f;
+        } else {
+            parentSpeed = 0f;
+        }
+        */
+        if (platform != null){
+            parentSpeed = platform.xVelocity;
+        } else {
+            parentSpeed = 0f;
+        }
+
         if (!isAttacking()){
             if (inputHorizontal != 0){
-                rb.velocity = new Vector2(inputHorizontal * runSpeed, rb.velocity.y);
+                rb.velocity = new Vector2(inputHorizontal * (runSpeed + parentSpeed), rb.velocity.y);
             } else if (groundCheck.isGrounded){
-                rb.velocity = new Vector2(0f, rb.velocity.y);
+                rb.velocity = new Vector2(parentSpeed, rb.velocity.y);
             }
         }
         
