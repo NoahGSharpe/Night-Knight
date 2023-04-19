@@ -449,7 +449,7 @@ MonoBehaviour:
   attackRadius: 0.21
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 1152
+    m_Bits: 3200
   attackCooldown: 0.2
 --- !u!114 &700094665359635210
 MonoBehaviour:
@@ -473,6 +473,7 @@ MonoBehaviour:
   fullHeart: {fileID: -132629232, guid: 16befb180caa1f74fbb3d6f8d2299e62, type: 3}
   emptyHeart: {fileID: 606291942, guid: 16befb180caa1f74fbb3d6f8d2299e62, type: 3}
   shakeForce: 0.05
+  deathText: {fileID: 0}
 --- !u!114 &8804544272116809328
 MonoBehaviour:
   m_ObjectHideFlags: 0

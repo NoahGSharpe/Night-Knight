@@ -10,6 +10,6 @@ public class KillCounter : MonoBehaviour
         if (door == null)
             return;
         
-        //door.GetComponent<NameOfDoorScript>().NameOfDoorScriptFunctionToIncrementKillCount();
+        //door.GetComponent<EnemyDoor>().DoorCount();
     }
 }
