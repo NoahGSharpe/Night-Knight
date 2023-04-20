@@ -124,6 +124,7 @@ MonoBehaviour:
   delayMultiplier: 1
   maxSpeed: 4
   acceleration: 2
+  spottingRange: 2.3
 --- !u!58 &8537046459211395030
 CircleCollider2D:
   m_ObjectHideFlags: 0

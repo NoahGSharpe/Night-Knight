@@ -11,6 +11,8 @@ public class Summon : MonoBehaviour, IDamageable
     [SerializeField] private float acceleration;
     private Transform playerTransform;
     private Vector3 direction;
+    [SerializeField] private float spottingRange;
+    private bool spotted = false;
 
     private Animator anim;
 
@@ -20,21 +22,27 @@ public class Summon : MonoBehaviour, IDamageable
     }
 
     private void Update(){
-        if (delay > 0){
-            delay -= Time.deltaTime;
-            return;
+        if (!spotted && Vector2.Distance(this.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < spottingRange){
+            spotted = true;
         }
 
-        if (direction == Vector3.zero){
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-            direction = (playerTransform.position - this.transform.position).normalized;
-        }
+        if (spotted){
+            if (delay > 0){
+                delay -= Time.deltaTime;
+                return;
+            }
 
-        if (currentSpeed < maxSpeed){
-            currentSpeed += acceleration * Time.deltaTime;
-        }
+            if (direction == Vector3.zero){
+                playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+                direction = (playerTransform.position - this.transform.position + new Vector3(0f, 0.2f, 0f)).normalized;
+            }
 
-        transform.position += direction * currentSpeed * Time.deltaTime;
+            if (currentSpeed < maxSpeed){
+                currentSpeed += acceleration * Time.deltaTime;
+            }
+
+            transform.position += direction * currentSpeed * Time.deltaTime;
+        }
     }
 
     public void TakeDamage(int damage){
@@ -57,5 +65,10 @@ public class Summon : MonoBehaviour, IDamageable
             Debug.Log("I collided with something other than the player");
         }
         Die();
+    }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(this.transform.position, spottingRange);
     }
 }

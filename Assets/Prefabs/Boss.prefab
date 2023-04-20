@@ -225,11 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd0f3c7a9edb094eb1417fafe11f0d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 15
   attackRange: 0.7
-  attackCooldown: 3
-  enragedAttackCooldown: 2
-  summonCooldown: 10
+  attackCooldown: 2.5
+  enragedAttackCooldown: 1.5
+  summonCooldown: 5.5
   summonSpawnPoints:
   - {fileID: 2393904250615973590}
   - {fileID: 2393904251674209399}
@@ -242,8 +242,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 4096
-  moveSpeed: 0.2
-  enragedMoveSpeed: 0.3
+  moveSpeed: 0.5
+  enragedMoveSpeed: 0.75
   healthBar: {fileID: 0}
   healthBarSlider: {fileID: 0}
 --- !u!114 &2393904251087786234

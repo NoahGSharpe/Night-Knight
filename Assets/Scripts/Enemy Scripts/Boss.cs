@@ -101,7 +101,7 @@ public class Boss : MonoBehaviour, IDamageable
     }
 
     public void TakeDamage(int damage){
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("BossDeath")){
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("BossDeath") || anim.GetCurrentAnimatorStateInfo(0).IsName("BossSkill")){
             return;
         }
 
