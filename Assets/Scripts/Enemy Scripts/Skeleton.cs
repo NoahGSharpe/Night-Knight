@@ -67,6 +67,10 @@ public class Skeleton : MonoBehaviour, IDamageable
     }
 
     public void TakeDamage(int damage){
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("SkeletonDeath")){
+            return;
+        }
+
         health -= damage;
 
         if (health <= 0){

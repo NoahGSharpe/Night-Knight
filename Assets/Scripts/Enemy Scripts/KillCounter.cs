@@ -10,6 +10,6 @@ public class KillCounter : MonoBehaviour
         if (door == null)
             return;
         
-        //door.GetComponent<EnemyDoor>().DoorCount();
+        door.GetComponent<EnemyDoor>().DoorCount();
     }
 }

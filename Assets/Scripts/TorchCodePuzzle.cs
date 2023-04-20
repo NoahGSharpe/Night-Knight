@@ -22,6 +22,7 @@ public class TorchCodePuzzle : MonoBehaviour
 
     void Start()
     {
+        GetComponent<Animator>().SetBool("Open", false);
         CodeGen();
     }
     void Update()

@@ -6,10 +6,9 @@ public class EnemyDoor : MonoBehaviour
 {
     public int enemeynum;
     //public List<GameObject> enemies;
-    // Update is called once per frame
     void Update()
     {
-         if (enemeynum <= 0)
+        if (enemeynum <= 0)
         {
             gameObject.GetComponent<Animator>().SetBool("Open", true);
         }

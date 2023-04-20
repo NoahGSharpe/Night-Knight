@@ -124,7 +124,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 05041147ed6588a458fd11a6bbca19e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -142,9 +142,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1397831715
+  m_SortingLayer: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: -1257426996, guid: e6f90fe3b94fd4d4892657220378d322, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   - {fileID: 2393904252059348517}
   - {fileID: 2393904252496074494}
   summonPrefab: {fileID: 8537046459211395026, guid: 5b0fafc99587e084db8e1ce85ac02623, type: 3}
-  spottingRange: 3.64
+  spottingRange: 3.07
   attackPoint: {fileID: 2393904250905622349}
   attackRadius: 0.45
   playerLayer:
