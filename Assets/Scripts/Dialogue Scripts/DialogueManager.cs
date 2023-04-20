@@ -163,6 +163,7 @@ public class DialogueManager : MonoBehaviour
             if (spriteName != "")
             {
                 speaker.sprite = speakerLibrary.speakerLibrary[speakerSpriteNames.IndexOf(spriteName)].sprite; //sets the speaker sprite to corresponding sprite
+                speaker.preserveAspect = true;
             }
             else
             {

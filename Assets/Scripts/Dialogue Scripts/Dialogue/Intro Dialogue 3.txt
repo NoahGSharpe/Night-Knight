@@ -1,4 +1,4 @@
 [NAME=Boss][SPEAKERSPRITE=]Silence.
 The Solstice Vanguard. You shall make an excellent appetizer before we consume what remains of your country.
-[NAME=OtherKnight][SPEAKERSPRITE=] Hah! You think you've won?
+[NAME=OtherKnight][SPEAKERSPRITE=]Hah! You think you've won?
 Pathetic. You've won nothing but the wrath of the Solstice Vanguard!

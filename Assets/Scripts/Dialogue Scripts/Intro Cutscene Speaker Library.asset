@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerLibrary:
   - name: Player Knight
-    sprite: {fileID: -1487166742, guid: cdeb57798ca2b8a4ebb6ac759e2c6909, type: 3}
+    sprite: {fileID: 471246167, guid: e7a872ceb404eec4fa34b94b4cfbc891, type: 3}
   - name: Other Knight
-    sprite: {fileID: -1487166742, guid: cdeb57798ca2b8a4ebb6ac759e2c6909, type: 3}
+    sprite: {fileID: 1538745930, guid: 80f7f7dabc260984b9a5c8981676926d, type: 3}
   - name: Boss
     sprite: {fileID: -1487166742, guid: cdeb57798ca2b8a4ebb6ac759e2c6909, type: 3}
