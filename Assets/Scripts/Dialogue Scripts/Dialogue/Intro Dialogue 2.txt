@@ -1,0 +1,1 @@
+[NAME=PlayerKnight][SPEAKERSPRITE=]What on earth?!

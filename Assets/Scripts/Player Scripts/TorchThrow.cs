@@ -21,11 +21,13 @@ public class TorchThrow : MonoBehaviour
     bool canthrow = true;
     [Tooltip("How long the torch lasts before disappearing.")]
     public float lifespan;
+    private PlayerAudio audio;
     //public int torchnum;
 
     void Start()
     {
         cam = Camera.main;
+        audio = GetComponent<PlayerAudio>();
     }
     void Update()
     {
@@ -49,6 +51,7 @@ public class TorchThrow : MonoBehaviour
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
                 rb.AddForce(direction * throwforce);
                 currenttorch = projectile;
+                audio.TossAud();
                 canthrow = false;
                 StartCoroutine(Cooldown());
                 StartCoroutine(TorchDecay());

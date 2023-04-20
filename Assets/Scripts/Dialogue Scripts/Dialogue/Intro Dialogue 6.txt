@@ -1,0 +1,1 @@
+[NAME=Boss][SPEAKERSPRITE=]One less vessel for the sacrifice. A shame.
