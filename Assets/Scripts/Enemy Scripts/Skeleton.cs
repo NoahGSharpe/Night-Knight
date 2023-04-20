@@ -78,6 +78,7 @@ public class Skeleton : MonoBehaviour, IDamageable
 
     private void Die(){
         anim.SetTrigger("Death");
+        GetComponent<KillCounter>().Die();
         this.enabled = false;
     }
 

@@ -306,7 +306,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  xVelocity: 0
   startingPoint: 0
   points:
   - {fileID: 4377892337400517189}
   - {fileID: 4377892336526435963}
+  testValue: 0.1

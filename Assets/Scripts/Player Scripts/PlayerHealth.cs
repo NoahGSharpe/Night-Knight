@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using Cinemachine;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
@@ -13,23 +13,34 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private Sprite fullHeart; // Sprite for a full heart
     [SerializeField] private Sprite emptyHeart; // Sprite for an empty heart
 
-    private Animator anim;
 
-    void Start()
+    [SerializeField] private float shakeForce;
+
+    private CinemachineImpulseSource camImpulseSource;
+    private Animator anim;
+    [SerializeField] private DeathText deathText;
+
+    private void Start()
     {
         anim = GetComponent<Animator>();
+        camImpulseSource = GetComponent<CinemachineImpulseSource>();
         currentHearts = maxHearts;
         UpdateHeartsUI();
     }
 
     public void TakeDamage(int damage)
     {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerDeath"))
+            return;
+
         currentHearts -= damage;
 
         if (currentHearts >= 0)
         {
             hearts[currentHearts].sprite = emptyHeart;
             anim.SetTrigger("Hurt");
+            camImpulseSource.GenerateImpulseWithForce(shakeForce);
+            hearts[currentHearts].GetComponent<HeartShake>().Shake();
         }
 
         if (currentHearts <= 0)
@@ -45,6 +56,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         GetComponent<PlayerAnimations>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
+
+        deathText.StartGrowingText();
 
         Invoke("RestartScene", 3.0f);
     }
@@ -65,7 +78,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             }
         }
     }
-
 
     private void RestartScene(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
