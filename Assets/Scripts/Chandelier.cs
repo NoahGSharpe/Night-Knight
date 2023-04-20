@@ -7,6 +7,9 @@ public class Chandelier : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject rope;
     private Animator ropeanim;
+    private AudioSource audio;
+    [SerializeField] private AudioClip ropesnap;
+    [SerializeField] private AudioClip thud;
     //private Collider2D ropetrigger;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +17,7 @@ public class Chandelier : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rope = gameObject.transform.GetChild(0).gameObject;
         ropeanim = rope.GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
         //ropetrigger = rope.GetComponent<Collider2D>();
     }
 
@@ -23,7 +27,9 @@ public class Chandelier : MonoBehaviour
         if (rope && ropeanim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
         {
             Destroy(rope);
+            audio.clip = ropesnap;
             rb.isKinematic = false;
+            audio.Play();
         }
     }
 
@@ -39,6 +45,8 @@ public class Chandelier : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
+            audio.clip = thud;
+            audio.Play();
             rb.isKinematic = true;
             rb.velocity = new Vector2(0,0);
         }
