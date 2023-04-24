@@ -233,9 +233,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 3
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -334,5 +334,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   step: {fileID: 8300000, guid: 7e24548c0a518f04f8d18f930f613545, type: 3}
+  stepvolume: 0.3
   attack: {fileID: 8300000, guid: 6dae75026d65cae43beb223eede568c4, type: 3}
+  attackvolume: 1
   hiss: {fileID: 8300000, guid: 8133f6148ffda2f44abd05741cde9fab, type: 3}
+  hissvolume: 1
+  thud: {fileID: 8300000, guid: 95c0594fac3e08f47860243f8b58bd74, type: 3}
+  thudvolume: 0.3

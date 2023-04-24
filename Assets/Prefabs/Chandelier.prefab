@@ -896,7 +896,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropesnap: {fileID: 8300000, guid: 943b05c7bd6fc0949a34a74e9bb9460f, type: 3}
+  ropevolume: 0.1
   thud: {fileID: 8300000, guid: 95c0594fac3e08f47860243f8b58bd74, type: 3}
+  thudvolume: 0.4
 --- !u!82 &1999776401403344225
 AudioSource:
   m_ObjectHideFlags: 0
@@ -918,9 +920,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -953,7 +955,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
