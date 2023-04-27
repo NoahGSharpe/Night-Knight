@@ -1,1 +1,1 @@
-[NAME=Undead Executioner][SPEAKERSPRITE=Undead Executioner]One less vessel for the sacrifice. A shame.
+[NAME=Undead Executioner][SPEAKERSPRITE=Undead Executioner][PITCH=3]One less vessel for the sacrifice. A shame.

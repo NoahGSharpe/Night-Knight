@@ -48,6 +48,11 @@ public class Chandelier : MonoBehaviour
     }*/
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Torch"))
+        {
+            ropeanim.enabled = true;
+            Destroy(other.gameObject);
+        }
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             audio.clip = thud;

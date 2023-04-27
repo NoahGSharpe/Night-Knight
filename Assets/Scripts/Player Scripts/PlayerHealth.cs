@@ -56,6 +56,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         GetComponent<PlayerAnimations>().enabled = false;
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAttack>().enabled = false;
+        GetComponent<TorchThrow>().enabled = false;
 
         deathText.StartGrowingText();
 
