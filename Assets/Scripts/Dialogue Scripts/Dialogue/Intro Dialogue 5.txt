@@ -1,2 +1,2 @@
-[NAME=PlayerKnight][SPEAKERSPRITE=]I won't let you take another life!
-[NAME=Boss][SPEAKERSPRITE=]You've seen your friend's fate, and yet you challenge me?
+[NAME=Sir Steve][SPEAKERSPRITE=Sir Steve][PITCH=1]I won't let you take another life!
+[NAME=Undead Executioner][SPEAKERSPRITE=Undead Executioner][PITCH=3]You've seen your friend's fate, and yet you challenge me?

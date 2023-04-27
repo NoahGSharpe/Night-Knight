@@ -9,7 +9,11 @@ public class Chandelier : MonoBehaviour
     private Animator ropeanim;
     private AudioSource audio;
     [SerializeField] private AudioClip ropesnap;
+    [Range(0, 1)]
+    public float ropevolume = 1;
     [SerializeField] private AudioClip thud;
+    [Range(0, 1)]
+    public float thudvolume = 1;
     //private Collider2D ropetrigger;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +32,7 @@ public class Chandelier : MonoBehaviour
         {
             Destroy(rope);
             audio.clip = ropesnap;
+            audio.volume = ropevolume;
             rb.isKinematic = false;
             audio.Play();
         }
@@ -43,9 +48,15 @@ public class Chandelier : MonoBehaviour
     }*/
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Torch"))
+        {
+            ropeanim.enabled = true;
+            Destroy(other.gameObject);
+        }
         if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             audio.clip = thud;
+            audio.volume = thudvolume;
             audio.Play();
             rb.isKinematic = true;
             rb.velocity = new Vector2(0,0);

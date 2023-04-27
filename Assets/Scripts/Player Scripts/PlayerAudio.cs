@@ -31,11 +31,19 @@ public class PlayerAudio : MonoBehaviour
     [SerializeField] private AudioClip die;
     [Range(0, 1)]
     public float dievolume = 1;
+
+    [HideInInspector] public AudioSource runsource;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
+        GameObject RunGameObject = new GameObject("RunAudioSource");
+        RunGameObject.transform.parent = transform;
+        runsource = RunGameObject.AddComponent<AudioSource>();
+        runsource.clip = run;
+        runsource.volume = runvolume;
+        runsource.loop = true;
     }
 
     // Update is called once per frame
@@ -47,12 +55,8 @@ public class PlayerAudio : MonoBehaviour
         }
         else
         {
-            audio.loop = false;
-            if (isPlaying == true && anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerIdle"))
-            {
-                audio.Stop();
+                runsource.Stop();
                 isPlaying = false;
-            }
             
         }
     }
@@ -62,11 +66,7 @@ public class PlayerAudio : MonoBehaviour
         
         if (isPlaying == false)
         {
-            audio.Stop();
-            audio.clip = run;
-            audio.volume = runvolume;
-            audio.loop = true;
-            audio.Play();
+            runsource.Play();
             isPlaying = true;
         }
         
@@ -101,6 +101,7 @@ public class PlayerAudio : MonoBehaviour
     }
     public void TossAud()
     {
+        audio.loop = false;
         audio.clip = toss;
         audio.volume = tossvolume;
         audio.Play();

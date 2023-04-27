@@ -6,39 +6,50 @@ public class SkeletonAudio : MonoBehaviour
 {
     private Animator anim;
     private AudioSource audio;
-    private bool isPlaying;
     [SerializeField] private AudioClip step;
+    [Range(0, 1)]
+    public float stepvolume = 1;
     [SerializeField] private AudioClip attack;
+    [Range(0, 1)]
+    public float attackvolume = 1;
     [SerializeField] private AudioClip hiss;
-    // Start is called before the first frame update
+    [Range(0, 1)]
+    public float hissvolume = 1;
+    [SerializeField] private AudioClip thud;
+    [Range(0, 1)]
+    public float thudvolume = 1;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void StepAud()
     {
         audio.Stop();
         audio.clip = step;
+        audio.volume = stepvolume;
         audio.Play();
     }
     public void AttackAud()
     {
         audio.Stop();
         audio.clip = attack;
+        audio.volume = attackvolume;
         audio.Play();
     }
     public void HissAud()
     {
         audio.Stop();
         audio.clip = hiss;
+        audio.volume = hissvolume;
+        audio.Play();
+    }
+    public void ThudAud()
+    {
+        audio.Stop();
+        audio.clip = thud;
+        audio.volume = thudvolume;
         audio.Play();
     }
 }

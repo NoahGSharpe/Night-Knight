@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Intro Cutscene Speaker Library
   m_EditorClassIdentifier: 
   speakerLibrary:
-  - name: Player Knight
+  - name: Sir Steve
     sprite: {fileID: 471246167, guid: e7a872ceb404eec4fa34b94b4cfbc891, type: 3}
-  - name: Other Knight
-    sprite: {fileID: 1538745930, guid: 80f7f7dabc260984b9a5c8981676926d, type: 3}
-  - name: Boss
-    sprite: {fileID: -1487166742, guid: cdeb57798ca2b8a4ebb6ac759e2c6909, type: 3}
+  - name: Sir Jim
+    sprite: {fileID: 21300000, guid: 7770cdd7840ea694f85346c343d362b9, type: 3}
+  - name: Undead Executioner
+    sprite: {fileID: 21300000, guid: b8cf15e84b4280448a7921e247b452f4, type: 3}

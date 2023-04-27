@@ -232,6 +232,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  audio: {fileID: 9164104907544162176}
+  playaud: 0
   isGrounded: 1
 --- !u!1 &9203516539531569580
 GameObject:
@@ -493,19 +495,20 @@ MonoBehaviour:
   run: {fileID: 8300000, guid: eec469c39d067c641a11610b30e3557c, type: 3}
   runvolume: 1
   jump: {fileID: 8300000, guid: cbc15484d6b036041baf748cfc1f6d1d, type: 3}
-  jumpvolume: 1
+  jumpvolume: 0.05
   land: {fileID: 8300000, guid: acf7473dee6fdbe47b1fb6e713b5fdb8, type: 3}
-  landvolume: 1
+  landvolume: 0.05
   attack1: {fileID: 8300000, guid: 6dae75026d65cae43beb223eede568c4, type: 3}
-  attackvolume1: 1
+  attackvolume1: 0.6
   attack2: {fileID: 8300000, guid: 6dae75026d65cae43beb223eede568c4, type: 3}
-  attackvolume2: 1
+  attackvolume2: 0.6
   toss: {fileID: 8300000, guid: 7c6b167bf6577a849ad291b5039e17eb, type: 3}
-  tossvolume: 1
+  tossvolume: 0.5
   hurt: {fileID: 8300000, guid: e65989c0eec9c3948bb5933df6100cf1, type: 3}
-  hurtvolume: 1
+  hurtvolume: 0.6
   die: {fileID: 8300000, guid: ef06d7ba8ab682d4db236a9904a48136, type: 3}
-  dievolume: 1
+  dievolume: 0.3
+  runsource: {fileID: 0}
 --- !u!114 &8804544272116809328
 MonoBehaviour:
   m_ObjectHideFlags: 0
