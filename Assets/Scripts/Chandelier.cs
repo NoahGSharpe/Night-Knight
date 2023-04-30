@@ -1,3 +1,5 @@
+//DIG3878 Night Knight Final Chandelier.cs by Torchlight Co.
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
