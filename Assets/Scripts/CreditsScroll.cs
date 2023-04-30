@@ -11,7 +11,7 @@ public class CreditsScroll : MonoBehaviour
     private void Update(){
         transform.position += new Vector3(0f, scrollSpeed * Time.deltaTime, 0f);
 
-        if (transform.position.y > 1600){
+        if (transform.position.y > 5800){
             SceneManager.LoadScene("Main Menu");
         }
     }
