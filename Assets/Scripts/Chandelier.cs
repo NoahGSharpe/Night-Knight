@@ -5,7 +5,7 @@ using UnityEngine;
 public class Chandelier : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private GameObject rope;
+    public GameObject rope;
     private Animator ropeanim;
     private AudioSource audio;
     [SerializeField] private AudioClip ropesnap;
@@ -14,10 +14,11 @@ public class Chandelier : MonoBehaviour
     [SerializeField] private AudioClip thud;
     [Range(0, 1)]
     public float thudvolume = 1;
-    //private Collider2D ropetrigger;
+    public List<Collider2D> colliders;
     // Start is called before the first frame update
     void Start()
     {
+        //colliders.Add(gameObject.FindObjectsOfType(Collider));
         rb = GetComponent<Rigidbody2D>();
         rope = gameObject.transform.GetChild(0).gameObject;
         ropeanim = rope.GetComponent<Animator>();
@@ -53,17 +54,47 @@ public class Chandelier : MonoBehaviour
             ropeanim.enabled = true;
             Destroy(other.gameObject);
         }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+       
+        /*if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             audio.clip = thud;
             audio.volume = thudvolume;
             audio.Play();
+            foreach (Collider2D col in colliders)
+            {
+                if (col.enabled == false)
+                {
+                    col.enabled = false;
+                }
+            }
             rb.isKinematic = true;
             rb.velocity = new Vector2(0,0);
-        }
-        if (other.gameObject.tag == "Enemy" && rb.isKinematic == false)
+        }*/
+    }
+    public void Land()
+    {
+        audio.clip = thud;
+        audio.volume = thudvolume;
+        audio.Play();
+        foreach (Collider2D col in colliders)
         {
-            //DamageEnemySomehow
+            if (col.enabled == false)
+            {
+                col.enabled = true;
+            }
+        }
+        rb.isKinematic = true;
+        rb.velocity = new Vector2(0, 0);
+    }
+    public void Damage()
+    {
+        audio.clip = thud;
+        audio.volume = thudvolume;
+        audio.Play();
+        
+        foreach (Collider2D col in colliders)
+        {
+            col.enabled = false;
         }
     }
 }
